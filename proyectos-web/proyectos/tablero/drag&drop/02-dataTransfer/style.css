@@ -1,0 +1,21 @@
+/* style.css */
+
+:root {
+  --color-elemento: hsl(182, 30%, 75%);
+  --color-elemento-destino: hsl(182, 30%, 35%);
+  --color-texto-elemento-claro: white;
+  --color-texto-elemento-oscuro: black;
+}
+
+.contenedor {
+  display: flex;
+  flex-direction: column;
+  gap: 0.9em;
+}
+
+.elemento {
+  background-color: var(--color-elemento);
+  color: var(--color-texto-elemento-oscuro);
+  padding: 0.5em;
+}
+

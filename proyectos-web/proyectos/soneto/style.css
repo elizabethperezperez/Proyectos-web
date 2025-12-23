@@ -1,0 +1,124 @@
+/* Estilos generales */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* outline: 1px solid red; */
+}
+
+:root {
+
+    --color-de-fondo: hsl(120, 21%, 91%);
+    --color-principal: hsl(186, 32%, 23%);
+    --color-principal-texto: hsl(0, 0%, 100%);
+    --color-principal-borde: hsl(188, 23%, 46%);
+    --color-texto: hsl(0, 3%, 6%);
+    --fuente-familia: Arial, Helvetica,Verdana, sans-serif;
+    --fuente-familia-titulo: Verdana, sans-serif;
+    
+    
+}
+
+body {
+    font-family: var(--fuente-familia);
+    background-color: var(--color-de-fondo);
+
+
+}
+
+.contenedor-ipo {
+
+    display: flex;
+    flex-direction: column;
+    
+
+    .cabecera-ipo {
+        background-color: var(--color-principal);
+        color: var(--color-principal-texto);
+        padding: 1em;
+
+        .titulo {
+            text-align: center;
+            text-transform: uppercase;
+            font-weight: bold;
+            font-size: 1.5rem; 
+            justify-content: flex-start; 
+            max-width: 75em;
+            margin: 0 auto;
+            padding: 0 1rem;
+
+            .logo{
+            
+            width: auto;
+            height: 2.5em;
+            margin-right: 1rem;
+        }
+             
+            
+        }
+        
+    }
+
+    .poema {
+        flex: 1;
+        padding: 1em;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        background-image: url('./imagenes/castillo2.jpeg');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        .caja-poema {
+            background-color: var(--color-de-fondo);
+            border: 0.2em solid var(--color-principal-borde);
+            width: 70%;
+            max-width: 30em;
+            color: var(--color-texto);
+            padding: 1em;
+            border-radius: 0.9em;
+            min-height: auto;
+            .caja-titulo{
+                background-color: var(--color-principal);
+                padding: 1.5em;
+                border-radius: 0.7em;
+                margin-bottom: 2rem;
+                box-shadow:0 4px 0.9em var(--color-texto);
+                .titulo-poema {
+                text-align: center;
+                text-transform: uppercase;
+                font-weight: bold;
+                font-family: var(--fuente-familia-titulo);
+                font-size: 2em;
+                color: var(--color-principal-texto);
+                }}
+        
+    }}
+    
+    .contenido {
+                list-style: none;
+                display: flex;
+                flex-direction: column;
+                gap: 1em;
+                font-size: 1.2em;
+                line-height: 1.6;
+                flex: 0;
+                justify-content: flex-start;
+            }
+
+            }
+    .pie-ipo {
+
+        background-color: var(--color-principal);
+        color: var(--color-principal-texto);
+        padding: 1.3em;
+        text-align: center;
+        font-size: 1.5em;
+        font-weight: bold;
+        justify-content: space-between;
+        
+    }

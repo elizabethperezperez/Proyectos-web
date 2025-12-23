@@ -1,0 +1,150 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+:root{
+    --color-de-fondo: hsl(0, 13%, 95%);
+    --negro: hsl(217, 41%, 10%);
+    --blanco: hsl(220, 27%, 98%);
+    --color-texto: hsl(0, 3%, 6%);
+    --color-sombra: hsla(229, 84%, 5%, 0.6);
+
+    --fuente-familia: 'Arial', Helvetica,Verdana, sans-serif;
+    --fuente-familia-titulo: Verdana, sans-serif;
+
+}
+
+body{
+    font-family: var(--fuente-familia);
+    background-color: var(--color-de-fondo);
+    color: var(--color-texto);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2em;
+
+}
+
+.titulo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 1em;
+    
+}
+
+.controles{
+    display: flex;
+    align-items: center;
+    padding: 1em;
+    gap: 1em;
+    border-radius: 1em;
+    font-size: 1.1em;
+    box-shadow: 0 0 10px var(--color-sombra);}
+
+.modal{
+        position: fixed;
+        display: none;
+        align-items: center;
+        z-index: 100; /*Por encima del resto de elementos*/
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        overflow: auto;
+        background-color: hsla(0, 0%, 0%, 0.4);
+        justify-content: center;
+}
+.contenido-modal{
+    background-color: var(--blanco);
+    color: var(--negro);
+    padding: 2em;
+    border: 0.0625em solid hsl(0, 0%, 53%);
+    width: 80%;
+    max-width: 37.5em;
+    border-radius: 0.5em;
+    box-shadow: 0em 0.25em 0.5em 0em hsla(0, 0%, 0%, 0.2),0em 0.375em 1.25em 0em hsla(0, 0%, 0%, 0.19);}
+
+.contenido-modal .explicacion{
+    text-align: left;
+    margin-bottom: 1.5em;
+}
+
+.contenido-modal .btnCerrarDescripcion{
+    padding: 1em;
+    text-align: center;
+    }
+.btnCerrarDescripcion button{
+    padding: 0.75em 1.5em;
+    cursor: pointer;
+    background-color: var(--negro);
+    color: var(--blanco);
+    border: none;
+    border-radius: 0.3em;
+    font-size: 1em;
+
+}   
+.ejercicio-piano{
+    padding: 1.15em;
+
+    .piano{
+        display: flex;
+        justify-content: center;
+        gap: 1em;
+
+        .teclas-piano{
+            position: relative;
+            display: flex;
+            display: grid;
+            grid-auto-flow: column;
+            grid-auto-columns: 8.1em;
+            
+
+            .teclas-blancas{
+                width: 8em;
+                height: 25em;
+                background: var(--blanco);
+                border-radius: 0.375em;
+                box-shadow: 0 0.3em 1em var(--color-sombra);
+                display: flex;
+                justify-content: center;
+                align-items: flex-end;
+                cursor: pointer;
+                user-select: none;
+                position: relative;
+
+                .info{
+                    color: var(--negro);
+                    font-size: 1em;
+                }
+
+            }
+
+            .teclas-negras{
+                width: 5em;
+                height: 14em;
+                background: var(--negro);
+                position: absolute;
+                color: var(--blanco);
+                border-radius: 0.25em;
+                display: flex;
+                align-items: flex-end;
+                justify-content: center;
+                cursor: pointer;
+
+                .info{
+                    font-size: 0.6em;
+                }
+
+            }
+            .pos-0 {left: 5em;}
+            .pos-1 { left: 14em;}
+            .pos-2 { left: 30em}
+            .pos-3 { left: 38em;}
+            .pos-4 { left: 46em;}
+        }
+    }
+
+}
+

@@ -1,0 +1,77 @@
+  <!DOCTYPE html>
+  <html lang="es">
+    <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="stylesheet" href="style.css">
+      <script type="module" src="scripts.js"></script>
+      <title>Piano</title>
+    </head>    <body>
+
+      <header>
+        <div>
+            <h1 class="titulo"> Piano Interactivo</h1>
+        </div>
+      </header>
+
+      <div class="controles">
+          <div class="volumen"> <label for="volume">Volumen:</label> <input id="volume" type="range" min="0" max="1" step="0.01" value="0.35"> </div>
+          <div class="onda">
+           Forma de Onda:
+           <select id="waveform">
+            <option value="sine" selected>Sinusoidal</option>
+            <option value="triangle">Triangular</option>
+            <option value="square">Cuadrada</option>
+            <option value="sawtooth">Diente de Sierra</option>
+          </select>
+          </div>
+          <div class = "botones">
+          <div><button id="btnDescripcion" class="btnDescripcion">Descripción</button></div>
+          </div>
+          <div id="modalDescripcion" class="modal">
+
+        <div class="contenido-modal">
+
+          <div class="explicacion">
+            <h2>Descripción</h2>
+            <h3>Como se realiza el ejercicio de piano</h3>
+            <p>Para seleccionar una tecla del piano: </p>
+            <p>- Presiona las teclas numéricas {1,2,3...8} del teclado equivalen {Do, Re, Mi..}</p>
+            <p>- Presiona las teclas numéricas {q, w, r, t, y} del teclado equivalen {Do#, Re#, Fa#, Sol#, La#}</p>
+            <p>- Presiona las teclas con el teclado</p>
+
+          </div>
+
+          <div class="btnCerrarDescripcion">
+            <button id="btnCerrarDescripcion">Cerrar</button>
+          </div>
+        </div>
+        </div>
+
+      </div>
+
+      <div class = "ejercicio-piano">
+        <div class="piano">
+            <div class="teclas-piano"> 
+
+                <!-- Teclas blancas-->
+                <div class="teclas-blancas" data-note="Do4" ><div class="info">Do4</div></div>
+                <div class="teclas-blancas" data-note="Re4" ><div class="info">Re4</div></div>
+                <div class="teclas-blancas" data-note="Mi4" ><div class="info">Mi4</div></div>
+                <div class="teclas-blancas" data-note="Fa4" ><div class="info">Fa4</div></div>
+                <div class="teclas-blancas" data-note="Sol4" ><div class="info">Sol4</div></div>
+                <div class="teclas-blancas" data-note="La4" ><div class="info">La4</div></div>
+                <div class="teclas-blancas" data-note="Si4" ><div class="info">Si4</div></div>
+                <div class="teclas-blancas" data-note="Do5" ><div class="info">Do5</div></div>
+
+                <!-- Teclas blancas-->
+                <div class="teclas-negras pos-0" data-note="Do#4" ><div class="info">Do#4</div></div>
+                <div class="teclas-negras pos-1" data-note="Re#4" ><div class="info">Re#4</div></div>
+                <div class="teclas-negras pos-2" data-note="Fa#4" ><div class="info">Fa#4</div></div>
+                <div class="teclas-negras pos-3" data-note="Sol#4" ><div class="info">Sol#4</div></div>
+                <div class="teclas-negras pos-4" data-note="La#4" ><div class="info">La#4</div></div>
+            </div>
+        </div>
+      </div>
+    </body>
+  </html>

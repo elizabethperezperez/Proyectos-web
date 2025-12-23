@@ -1,0 +1,96 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+:root{
+    --color-de-fondo: hsl(0, 13%, 95%);
+    --color-texto: hsl(0, 3%, 6%);
+    --color-blanco: hsl(0, 0%, 100%);
+    --color-sombra: hsl(185, 19%, 37%);
+    --color-borde-canva: hsl(0,0%,20%);
+    --color-del-boton: hsl(186, 32%, 23%);
+    --color-herramientas: hsla(186, 63%, 84%, 0.733);
+    --color-imagen: hsla(52, 66%, 82%, 0.733);
+    --color-sombra-boton: hsl(0, 0%, 10%);
+
+
+    --fuente-familia: Arial, Helvetica,Verdana, sans-serif;
+    --fuente-familia-titulo: Verdana, sans-serif;
+
+}
+
+body{
+    font-family: var(--fuente-familia);
+    background-image: url("imagenFondo2.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2em;
+}
+
+.titulo{
+    font-family: var(--fuente-familia-titulo);
+    color: var(--color-texto);
+    margin-top: 1em;
+}
+
+.herramientas{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1em;
+    gap: 4em;
+    border-radius: 1em;
+    font-size: 1.1em;
+    box-shadow: 0 0 1em var(--color-sombra);
+    background-color: var(--color-herramientas);
+}
+
+.boton{
+    display: flex;
+    gap: 2em;
+}
+
+.boton button {
+    padding: 0.8em 1.5em;
+    border:none;
+    background-color: var(--color-del-boton);
+    color: var(--color-blanco);
+    cursor: pointer;
+    border-radius: 0.3em;
+    position: relative;
+    box-shadow: 0 0.2em 0 var(--color-del-boton);
+    transition: all 0.1s ease;
+
+}
+
+.boton button.active,
+.boton button:active{
+    top: 0.2em;
+    box-shadow: 0 0.05em 0 var(--color-sombra-boton);
+}
+
+
+
+.drawingCanvas {
+    background: var(--color-blanco);
+    border: 0.2em solid var(--color-borde-canva);
+    cursor: pointer;
+}
+
+
+.imagen{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1em;
+    gap: 2em;
+    border-radius: 1em;
+    font-size: 1.1em;
+    box-shadow: 0 0 1em var(--color-sombra);
+    background-color: var(--color-imagen);
+}

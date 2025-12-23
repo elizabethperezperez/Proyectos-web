@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css">
+    <script defer src="script.js"></script>
+    <title>Tablero</title>
+  </head>
+
+  <body>
+
+    <h1 class="titulo">Proyecto Tablero</h1>
+    <div class="opciones">
+      <button id="inicio">Inicio</button>
+      <label for="tamañoFicha">Tamaño de la ficha:</label>
+      <select id="tamañoFicha">
+        <option value="pequeña">Pequeña</option>
+        <option value="mediana">Mediana</option>
+        <option value="grande">Grande</option>
+      </select>
+
+      <label for="formaFicha"> Forma de la ficha: </label>
+      <select name="formaFicha" id="formaFicha">
+        <option value="cuadrado">Cuadrado</option>
+        <option value="circulo">Círculo</option>
+        <option value="pentagono">Pentágono</option>
+      </select>
+      <label for="tamañoTablero">Tamaño del tablero:</label>
+      <input type="number" id="tamañoTablero" min="1" max="7" value="2">
+    </div>
+
+    
+    <div class = "tablero" id="tablero">
+      <div class="ficha pequeña color-rosa" data-ficha></div>
+      <div class="ficha pequeña color-verde" data-ficha></div>
+      <div class="ficha pequeña color-rosa" data-ficha></div>
+      <div class="ficha pequeña color-verde" data-ficha></div>
+    </div>
+
+
+  </body>
+</html>

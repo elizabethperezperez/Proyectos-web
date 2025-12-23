@@ -1,0 +1,216 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+:root{
+    --color-de-fondo: hsl(0, 13%, 95%);
+    --color-principal: hsl(186, 32%, 23%);
+    --color-principal-texto: hsl(0, 8%, 90%);
+    --color-principal-borde: hsl(0, 0%, 5%);
+    --color-texto: hsl(0, 3%, 6%);
+    --color-sombras: hsl(185, 19%, 37%);
+    --color-invisible: hsla(0, 100%, 50%, 0.4);
+    --fuente-familia: 'Arial', Helvetica,Verdana, sans-serif;
+    --fuente-familia-titulo: Verdana, sans-serif;
+    --color-punto: hsla(0, 38%, 85%, 0.4);
+    --color-punto-borde: hsl(0, 5%, 74%, 0.4);
+    --color-fondo-panel: hsla(0, 0%, 0%, 0.4); 
+    --panel-width: 18em;
+    --color-sombras: hsl(185, 19%, 37%);
+    --var-transparente: hsla(0, 0%, 0%, 0.5);
+
+
+}
+
+body{
+    font-family: var(--fuente-familia);
+    background-color: var(--color-de-fondo);
+    color: var(--color-texto);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2em;
+
+}
+
+.titulo {
+    font-family: var(--fuente-familia-titulo);
+    color: var(--color-texto);
+    margin-top: 0.5em;
+
+}
+
+.mapa{
+    display: grid;
+    position: relative;
+    font-size: 1.2em;
+    background-color: var(--color-de-fondo);
+    background-image: url(img/MapaAndalucía.png);
+    background-size: cover;
+    background-position: center;
+    border: 0.1em solid var(--color-principal-borde);
+    /*grid-template-columns: repeat(2, 1fr);*/
+    border-radius: 0.5em;
+    width: 58em;
+    height: 35em;
+    padding: 1.25em;
+    gap: 1.25em;
+    /*grid-template-columns: repeat(2, max-content);*/
+    /*
+    justify-content: center;
+    align-content: center;
+    align-items: center;*/
+    transform-origin: center center;
+    transition: transform 0.3s ease-out;
+
+}
+
+.provincia{
+    position: absolute;
+    width: 4em;
+    height: 4em;
+    border-radius: 50%;
+    cursor: pointer;
+    background-color: var(--color-punto);
+    border: 0.2em solid var(--color-punto-borde);
+}
+
+.sevilla{ top: 14em; left: 15em;}
+.cordoba{ top: 5em; left: 24em;}
+.jaen{ top: 8em; left: 38em;}
+.almeria{ top: 18em; left: 50em;}
+.granada{ top: 18em; left: 38em;}
+.malaga{ top: 22em; left: 25em;}
+.cadiz{ top: 25em; left: 14em;}
+.huelva{ top: 12em; left: 4em;}
+
+.tooltip{
+    position: absolute;
+    background: var(--color-texto); 
+    color: var(--color-principal-texto); 
+    border: 0.1em solid #333;
+    padding: 0.6em 1em;
+    border-radius: 0.6em;
+    font-size: 1em;
+    display: none;
+    pointer-events: none;
+    z-index: 100; 
+    max-width: 40em;
+    min-width: 15em;
+}
+
+/* Estilos para el Título y Descripción dentro del Tooltip */
+.tooltip h3 {
+    margin-top: 0;
+    margin-bottom: 0.3em;
+    font-size: 1.1em;
+    width: 100%;
+}
+
+.tooltip p {
+    margin: 0;
+    font-size: 0.9em;
+    width: 100%;
+}
+.close-button {
+    color: var(--color-texto); /* Usa el color de texto definido */
+    float: right;
+    font-size: 2em; /* Haz la "X" más grande */
+    font-weight: bold;
+    cursor: pointer;
+    line-height: 0.8; /* Ajusta la altura de línea para centrar verticalmente la "X" */
+    padding: 0 0.25em; /* Un poco de espacio */
+    margin-top: -0.2em; /* Sube un poco la posición para que quede en el borde */
+}
+
+.close-button:hover,
+.close-button:focus {
+    color: var(--color-sombras); /* Cambia de color al pasar el ratón para dar feedback */
+    text-decoration: none;
+    outline: none;
+}
+.modal {
+    display: none; /* Oculto por defecto */
+    position: fixed; /* Posición fija en la ventana del navegador */
+    z-index: 1; /* Por encima de todo */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto; /* Permite desplazamiento si el contenido es muy grande */
+    background-color: var(); /* Fondo negro semi-transparente (el color que "oscurece" el mapa) */
+}
+.modal-content {
+    /* Elige el color del recuadro aquí: */
+    background-color: white; 
+    
+    margin: 15% auto; 
+    padding: 2.5em;
+    border: none; 
+    border-radius: 1em;
+    width: 80%; 
+    max-width: 40em;
+    
+    /* Añadimos una sombra para un efecto "flotante" */
+    box-shadow: 0 0.5em 1.5em var(--var-transparente); 
+    
+    position: relative;
+}
+
+.panel-toggle-button {
+    position: fixed;
+    top: 1em;
+    right: 2em;
+    padding: 0.7em 1.5em;
+    background-color: var(--color-principal);
+    color: var(--color-principal-texto);
+    border: none;
+    border-radius: 0.5em;
+    cursor: pointer;
+    font-size: 1em;
+    z-index: 1000; /* Asegura que esté por encima de todo */
+    box-shadow: 0 0.2em 0.5em var(--var-transparente);
+    transition: background-color 0.3s;
+}
+.panel-toggle-button:hover {
+    background-color: var(--color-sombras);
+}
+.control-panel {
+    position: fixed;
+    top: 4em;
+    right: 0;
+    width: var(--panel-width); /* Ancho definido en las variables */
+    height: 100%;
+    background-color: var(--panel-background);
+    box-shadow: -0.5em 0 1em var(--var-transparente);
+    padding: 1.5em;
+    z-index: 999; 
+    
+    /* Posición inicial: Fuera de la pantalla */
+    transform: translateX(100%); 
+    transition: transform 0.5s ease-in-out; /* Animación de desplazamiento */
+}
+.control-panel.open {
+    transform: translateX(0); /* Posición final: Dentro de la pantalla */
+}
+
+.control-panel h3 {
+    margin-bottom: 2.5em;
+    color: var(--color-principal);
+    border-bottom: 0.1em solid #ccc;
+    padding-bottom: 0.5em;
+}
+
+/* Estilos para los controles internos (ejemplo) */
+.control-group {
+    margin-bottom: 1.5em;
+}
+.control-group label {
+    display: block;
+    margin-bottom: 0.5em;
+    font-weight: bold;
+}
+.control-group input[type="range"] {
+    width: 80%;
+}

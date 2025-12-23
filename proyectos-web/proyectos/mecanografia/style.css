@@ -1,0 +1,182 @@
+/**********************************************************************/
+/*  PROYECTO mecanografía      */
+
+/*
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+*/
+
+
+.oculto{
+    display: none;
+}
+
+:root {
+
+    --color-de-fondo-caja: hsl(214, 65%, 13%);
+    --color-principal-exterior: hsl(0, 24%, 89%);
+    --color-principal-texto: hsl(0, 0%, 100%);
+    --color-negro: hsl(255, 100%, 0%);
+    --color-principal-borde: hsl(222, 91%, 57%);
+    --color-campo-text: hsl(222, 49%, 25%); 
+    --color-sombra: hsla(222, 91%, 57%, 0.3);
+    --color-tecla: hsl(0, 100%, 50%);
+    --color-comenzar: hsl(120, 58%, 38%);
+    --color-fin: hsl(0, 72%, 35%);
+    --color-pausa: hsl(60, 35%, 45%);
+    --color-descripcion: hsl(120, 2%, 52%);
+    --color-nivel: hsl(221, 71%, 47%);
+    --color-modal: hsla(0, 0%, 0%, 0.5);
+    --fuente-familia: 'Arial', sans-serif;
+
+}
+
+body{
+    background-color: var(--color-principal-exterior);
+    color: var(--color-principal-texto);
+    font-family: var(--fuente-familia);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.titulo{
+    text-align: center;
+    font-size: 2em;
+    font-weight: bold;
+    color: var(--color-negro);
+    gap: 2em;
+}
+.btnComienzo, .btnFin,.btnPausa {
+    display: none;
+}
+
+.ejercicio-mecanografia{
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 1em;
+
+    .ejercicio-caja{
+        background-color: var(--color-de-fondo-caja);
+        border: 0.25em solid var(--color-principal-borde);
+        border-radius: 0.5em;
+        width: 25em;
+        padding: 1.25em;
+        box-shadow: 0 0 1.9em var(--color-sombra);
+    }
+
+    .mensageTiempoFinal{
+        color: var(--color-negro);
+    }
+
+    .nivel{
+        p{color: var(--color-negro);}
+        button{
+            border: none;
+            padding: 0.6em 1.25em;
+            border-radius: 0.75em;
+            color: var(--color-principal-texto);
+            font-size: 1em;
+            cursor: pointer;
+            background-color:var(--color-nivel);
+        }
+
+    }
+
+
+    .teclado-area{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 0.8em;
+
+        .fila{
+            display: flex;
+            gap: 0.8em;
+
+            .key{
+                width: 4em;
+                height: 2.5em;
+                background: var(--color-campo-text);
+                color: var(--color-principal-texto);
+                text-align: center;
+                line-height: 2.5em;
+                border-radius: 4px;
+                border: 0.06em solid var(--color-sombra);
+                transition: background 0.1s;
+            }
+
+        }
+    }
+
+    .botones{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 2em;
+        flex-direction: column;
+
+        button{
+            border: none;
+            padding: 0.6em 1.25em;
+            border-radius: 0.4em;
+            color: var(--color-principal-texto);
+            font-size: 1em;
+            cursor: pointer;
+        }
+
+        .btnComienzo{background-color: var(--color-comenzar);}
+        .btnFin{background-color: var(--color-fin);}
+        .btnPausa{background-color: var(--color-pausa);}
+        .btnDescripcion{background-color: var(--color-descripcion);}
+    }
+
+    .modal{
+        display: none;
+        position: fixed;
+        align-items: center;
+        z-index: 1; /*Por encima del resto de elementos*/
+
+        .contenido-modal{
+            background-color: var(--color-principal-texto);
+            color: var(--color-negro);
+            padding: 2em;
+            width: 80%;
+            max-width: 37.5em;
+
+            .explicacion{
+                text-align: left;
+            }
+
+            .btnCerrarDescripcion{
+                padding: 1em;
+                text-align: center;
+            }
+            
+        }
+
+
+    }
+
+    .tecla-actual {
+    background-color: var(--color-pausa) !important;/*#ffeb3b !important;*/
+    color: var(--color-negro)!important;;
+    font-weight: bold;
+    box-shadow: 0 0 0.6em var(--color-principal-borde);
+    transform: scale(1.1);
+    transition: all 0.2s ease;
+}
+ 
+}
+
+
+
+
+
